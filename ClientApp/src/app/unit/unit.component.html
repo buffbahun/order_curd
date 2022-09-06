@@ -1,0 +1,12 @@
+<form [formGroup]="unit">
+    <input type="text" formControlName="Name">
+    <button (click)="addUnit()" >Add</button>
+</form>
+
+<ul>
+    <li *ngFor="let lst of list; let i = index">
+        <p> {{ lst }} </p>
+        <button (click)="editUnit(i)" >Delete</button>
+        <button (click)="deleteUnit(i)">Edit</button>
+    </li>
+</ul>
