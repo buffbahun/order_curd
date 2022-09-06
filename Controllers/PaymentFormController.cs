@@ -60,28 +60,28 @@ namespace Order_CRUD.Controllers
             return Ok("Success");
         }
 
-        public dynamic getJsonData(List<OrderEntity> orders)
-        {
+        //public dynamic getJsonData(List<OrderEntity> orders)
+        //{
 
 
-            List<dynamic> datas = new List<dynamic>();
-            foreach (var order in orders)
-            {
-                var orderDetailQueryable = _orderDetailRepo.getQueryable().Where(a => a.OrderId == order.Id);//.ToList();
+        //    List<dynamic> datas = new List<dynamic>();
+        //    foreach (var order in orders)
+        //    {
+        //        var orderDetailQueryable = _orderDetailRepo.getQueryable().Where(a => a.OrderId == order.Id);//.ToList();
 
-                orderDetailQueryable = orderDetailQueryable.OrderByDescending(a => a.CreatedDate).Take(1);
+        //        orderDetailQueryable = orderDetailQueryable.OrderByDescending(a => a.CreatedDate).Take(1);
 
-                var details = orderDetailQueryable.ToList();
+        //        var details = orderDetailQueryable.ToList();
 
-                var data = new
-                {
+        //        var data = new
+        //        {
 
-                };
+        //        };
 
-                datas.Add(data);
-            }
-            return datas;
+        //        datas.Add(data);
+        //    }
+        //    return datas;
 
-        }
+        //}
     }
 }
